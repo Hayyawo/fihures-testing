@@ -22,40 +22,58 @@ public class TriangleTest {
 //
 //    }
 //
+////    @Test
+////    void test1(){
+////        //GIVEN
+////        Triangle triangle = new Triangle(-10,2);
+////
+////        //WHEN
+////        //THEN
+////        assertThrows(RuntimeException.class, triangle::calculation);
+////    }
+//
+//
+//    //czy bok ujemny
 //    @Test
-//    void test1(){
+//    void test3() {
 //        //GIVEN
-//        Triangle triangle = new Triangle(-10,2);
+//        Triangle triangle = new Triangle(11, 12, -12);
+//        //THEN
+//
 //
 //        //WHEN
-//        //THEN
 //        assertThrows(RuntimeException.class, triangle::calculation);
+//
+//    }
+//
+//    @Test
+//    void test4() {
+//        //GIVEN
+//        Triangle triangle = new Triangle(100, 5, 5);
+//        //THEN
+//
+//
+//        //WHEN
+//        assertThrows(RuntimeException.class, triangle::calculation);
+//
 //    }
 
-
-    //czy bok ujemny
     @Test
-    void test3() {
-        //GIVEN
-        Triangle triangle = new Triangle(11, 12, -12);
-        //THEN
+    void aLessThanZeroArgument_throwIllegalArgumentException() {
+        //Given
+        Triangle triangle = new Triangle(-100, 10, 10);
+        //then
 
-
-        //WHEN
-        assertThrows(RuntimeException.class, triangle::calculation);
-
+        //given
+        assertThrows(IllegalArgumentException.class,triangle::calculation);
+    }
+    @Test
+    void oneSideGreaterThanTwoOthersTogether_throwIllegalArgumentException(){
+        //Given
+        Triangle triangle = new Triangle(100,10,10);
+        //then
+        //given
+        assertThrows(IllegalArgumentException.class,triangle::calculation);
     }
 
-    @Test
-    void test4() {
-        //GIVEN
-        Triangle triangle = new Triangle(100, 5, 5);
-        //THEN
-
-
-
-        //WHEN
-        assertThrows(RuntimeException.class, triangle::calculation);
-
-    }
 }

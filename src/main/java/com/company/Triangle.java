@@ -23,15 +23,15 @@ public class Triangle implements Shape {
     @Override
     public double calculation() {
         if (a < 0 || b < 0 || c < 0) {
-            throw new RuntimeException("halo");
+            throw new IllegalArgumentException("halo");
         }
 
         if (a > b + c) {
-            throw new RuntimeException("SIEMA");
+            throw new IllegalArgumentException("SIEMA");
         } else if (b > a + c) {
-            throw new RuntimeException("SIEMA");
+            throw new IllegalArgumentException("SIEMA");
         } else if (c > a + b) {
-            throw new RuntimeException("SIEMA");
+            throw new IllegalArgumentException("SIEMA");
         }
 
 
